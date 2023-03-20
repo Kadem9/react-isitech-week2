@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 // J'ai importé les variables d'environnement dans le fichier .env.local pour qu'elle ne soit pas visible sur github
 const firebaseConfig = {
@@ -10,6 +11,10 @@ const firebaseConfig = {
     messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
     appId: process.env.REACT_APP_FIREBASE_APP_ID,
   };
+  console.log('firebaseConfig', firebaseConfig);
   
   const app = initializeApp(firebaseConfig);
-  export const auth = getAuth(app);
+  const auth = getAuth(app);
+  const db = getFirestore();
+
+  export { auth, db };
