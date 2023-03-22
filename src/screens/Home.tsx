@@ -1,4 +1,3 @@
-import { Youtube } from "../components/Youtube"
 import logo from "../assets/Apple-logo.png"
 import bannerImg from "../assets/banner.png"
 import { Products } from "../components/Products"

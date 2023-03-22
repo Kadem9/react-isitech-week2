@@ -22,9 +22,13 @@ const initialState: Cart = {
 const cartReducer = (state: Cart, action: any) => {
   switch (action.type) {
     case "ADD_ITEM":
+      const newItem = {
+        ...action.payload,
+        id: action.payload.id + "-" + Math.random().toString(36).substr(2, 9) // id unique
+      };
       return {
         ...state,
-        items: [...state.items, action.payload],
+        items: [...state.items, newItem],
       };
     case "REMOVE_ITEM":
       return {
@@ -35,6 +39,8 @@ const cartReducer = (state: Cart, action: any) => {
       return state;
   }
 };
+
+
 
 const CartContextProvider = ({ children }: CartContextProviderProps): JSX.Element => {
   const [cartState, cartdispatch] = useReducer(cartReducer, initialState);

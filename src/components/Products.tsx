@@ -1,6 +1,7 @@
 import Iphone12 from "../assets/products/iphone12.jpg";
 import Iphone13 from "../assets/products/iphone13.png";
 import Iphone13Pro from "../assets/products/iphone13pro.jpg";
+import { FaShoppingCart } from "react-icons/fa";
 
 type Products = {
   id: number;
@@ -10,83 +11,58 @@ type Products = {
 };
 
 export const Products = () => {
+  const products: Products[] = [
+    {
+      id: 1,
+      name: "Iphone 13",
+      price: 1199,
+      description: "Puissance irrésistible. À prix irrésistible.",
+    },
+    {
+      id: 2,
+      name: "Iphone 13 Pro",
+      price: 1199,
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
+    },
+    {
+      id: 3,
+      name: "Iphone 12",
+      price: 999,
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
+    },
+  ];
+
   return (
-    <main className="products">
-      <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-4xl lg:text-5xl">
-        <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
-          Produits à la une
-        </span>
+    <main className="max-w-full mx-auto p-4">
+      <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-8">
+        Produits à la une
       </h1>
-      <div className="flex flex-wrap">
-        <div className="border-solid border-2 border-neutral-300 p-4 lg:w-1/3 md:w-1/2 flex flex-col items-center">
-          <img width={500} src={Iphone13} alt="iphone 13" />
-
-          <h2 className="text-3xl text-transparent bg-clip-text bg-gradient-to-r to-blue-700 from-slate-400">
-            Iphone 13
-          </h2>
-
-          <p className="mt-4 text-center">
-            Puissance irrésistible. À prix irrésistible.
-          </p>
-
-          <p className="mt-4">Prix : 1199€</p>
-          <button className="bg-slate-900 text-white px-6 py-1 rounded-md mt-2 hover:bg-white hover:text-black hover:border-solid hover:border-2 hover:border-black">
-            Acheter
-          </button>
-        </div>
-
-        <div className="border-solid border-2 border-neutral-300 p-4 lg:w-1/3 md:w-1/2 flex flex-col items-center">
-          <img width={500} src={Iphone13} alt="iphone 13 pro" />
-          <h2 className="text-3xl text-transparent bg-clip-text bg-gradient-to-r to-blue-700 from-slate-400">
-            Iphone 13 Pro
-          </h2>
-
-          <p className="mt-4 text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            quae.
-          </p>
-          <p className="mt-4">Prix : 1199€</p>
-
-          <button className="bg-slate-900 text-white px-6 py-1 rounded-md mt-2 hover:bg-white hover:text-black hover:border-solid hover:border-2 hover:border-black">
-            Acheter
-          </button>
-        </div>
-
-        <div className="border-solid border-2 border-neutral-300 p-4 lg:w-1/3 md:w-1/2 flex flex-col items-center">
-          <img width={500} src={Iphone12} alt="iphone 12" />
-
-          <h2 className="text-3xl text-transparent bg-clip-text bg-gradient-to-r to-blue-700 from-slate-400">
-            Iphone 12
-          </h2>
-
-          <p className="mt-4 text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            quae.
-          </p>
-          <p className="mt-4">Prix : 999€</p>
-
-          <button className="bg-slate-900 text-white px-6 py-1 rounded-md mt-2 hover:bg-white hover:text-black hover:border-solid hover:border-2 hover:border-black">
-            Acheter
-          </button>
-        </div>
-
-        <div className="border-solid border-2 border-neutral-300 p-4 lg:w-1/3 md:w-1/2 flex flex-col items-center">
-          <img width={500} src={Iphone13} alt="iphone 13" />
-
-          <h2 className="text-3xl text-transparent bg-clip-text bg-gradient-to-r to-blue-700 from-slate-400">
-            Iphone 12 Pro
-          </h2>
-
-          <p className="mt-4 text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            quae.
-          </p>
-          <p className="mt-4">Prix : 1099€</p>
-
-          <button className="bg-slate-900 text-white px-6 py-1 rounded-md mt-2 hover:bg-white hover:text-black hover:border-solid hover:border-2 hover:border-black">
-            Acheter
-          </button>
-        </div>
+      <div className="flex flex-wrap justify-center">
+        {products.map((product) => (
+          <div
+            key={product.id}
+            className="max-w-sm rounded overflow-hidden shadow-lg mx-4 mb-8"
+          >
+            <img
+              className="w-full h-64 object-cover"
+              src={product.id === 1 ? Iphone13 : product.id === 2 ? Iphone13Pro : Iphone12}
+              alt={product.name}
+            />
+            <div className="px-6 py-4">
+              <div className="font-bold text-xl mb-2 text-blue-700">{product.name}</div>
+              <p className="text-gray-600 dark:text-gray-400 text-base mb-4">
+                {product.description}
+              </p>
+              <p className="text-gray-700 dark:text-white font-bold text-xl mb-2">
+                {product.price} €
+              </p>
+              <button className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-full inline-flex items-center">
+                <FaShoppingCart className="mr-2" />
+                Ajouter au panier
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
     </main>
   );
