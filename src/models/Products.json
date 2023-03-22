@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "model": "iPhone 13",
+    "name": "iPhone 13",
+    "description": "Le dernier iPhone avec des améliorations significatives de l'appareil photo et de l'affichage.",
+    "img": "https://www.apple.com/v/iphone/home/bm/images/overview/compare/compare_iphone_14_pro__cjmfbiggqhpy_large.jpg",
+    "price": 799.0
+  },
+  {
+    "id": 2,
+    "model": "iPhone 13 Mini",
+    "name": "iPhone 13 Mini",
+    "description": "La version compacte du dernier iPhone avec toutes les fonctionnalités du modèle standard.",
+    "img": "https://www.apple.com/v/iphone/home/bm/images/overview/compare/compare_iphone_14_pro__cjmfbiggqhpy_large.jpg",
+    "price": 699.0
+  },
+  {
+    "id": 3,
+    "model": "iPhone 12",
+    "name": "iPhone 12",
+    "description": "L'iPhone avec la technologie 5G et un design audacieux.",
+    "img": "https://www.apple.com/v/iphone/home/bm/images/overview/compare/compare_iphone_14_pro__cjmfbiggqhpy_large.jpg",
+    "price": 699.0
+  },
+  {
+    "id": 4,
+    "model": "iPhone 12 Pro",
+    "name": "iPhone 12 Pro",
+    "description": "L'iPhone avec une caméra professionnelle et une performance ultime.",
+    "img": "https://www.apple.com/v/iphone/home/bm/images/overview/compare/compare_iphone_14_pro__cjmfbiggqhpy_large.jpg",
+    "price": 999.0
+  },
+  {
+    "id": 5,
+    "model": "iPhone SE",
+    "name": "iPhone SE",
+    "description": "L'iPhone compact et abordable avec une performance exceptionnelle.",
+    "img": "https://www.apple.com/v/iphone/home/bm/images/overview/compare/compare_iphone_14_pro__cjmfbiggqhpy_large.jpg",
+    "price": 399.0
+  }
+]

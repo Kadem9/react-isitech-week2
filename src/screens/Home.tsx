@@ -15,7 +15,7 @@ export const Home = () => {
                 <button className="bg-white p-2 rounded-sm hover:bg-slate-300 text-black w-20 mt-4">Acheter</button>
             </div>
         <div className="right w-1/2 relative">
-            <img className="lg:w-52 md:w-48 sm:w-52 absolute bottom-0" src={bannerImg} alt="New iphone" />
+            <img className="lg:w-52 md:w-48 sm:w-52 absolute bottom-0 float-right" src={bannerImg} alt="New iphone" />
         </div>
         </main>
         <Products />
