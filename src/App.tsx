@@ -11,14 +11,15 @@ import { useContext } from 'react'
 import { Panier } from './screens/Panier'
 
 
+
 function App() {
 
   const { cartState } = useContext(CartContext);
   const totalItems = cartState.items.length;
 
   return (
-    <div className="container">
-    <nav className='flex justify-between items-center bg-gray-900 text-white p-4'>
+    <div className="container-full">
+    <nav className='flex justify-between items-center bg-black text-white p-4'>
       <div className="logo">
         <h1 className="text-2xl uppercase">Logo</h1>
       </div>

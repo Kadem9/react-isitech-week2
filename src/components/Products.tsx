@@ -58,7 +58,7 @@ export const Products = () => {
               </p>
               <button className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-full inline-flex items-center">
                 <FaShoppingCart className="mr-2" />
-                Ajouter au panier
+                Voir le produit
               </button>
             </div>
           </div>

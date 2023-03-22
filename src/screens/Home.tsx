@@ -1,23 +1,29 @@
+import { Link, NavLink } from "react-router-dom"
 import logo from "../assets/Apple-logo.png"
-import bannerImg from "../assets/banner.png"
+import bannerImg from "../assets/bnr.png"
 import { Products } from "../components/Products"
 
 export const Home = () => {
     return (
-        <section>
-        <main className="mt-4 max-w-full bg-slate-800 flex p-8 text-white xs:h-24">
-            <div className="left flex flex-col justify-center w-1/2">
-                <img src={logo} alt="logo apple" className="w-10 block"/>
-                <h3 className="text-5xl">Intro<span className="text-bold">ducing</span></h3>
-                <h1 className="text-5xl">Iphone 12</h1>
-                <p className="mt-4">Profitez d'une offre de -20% lors de <br /> l'achat du nouvelle Iphone sans forfait !</p>
-                <button className="bg-white p-2 rounded-sm hover:bg-slate-300 text-black w-20 mt-4">Acheter</button>
-            </div>
-        <div className="right w-1/2 relative">
-            <img className="lg:w-52 md:w-48 sm:w-52 absolute bottom-0 float-right" src={bannerImg} alt="New iphone" />
-        </div>
-        </main>
-        <Products />
-        </section>
+        <>
+    <section className="flex flex-col md:flex-row bg-black text-white justify-center items-center h-auto overflow-hidden p-4">
+      <div className="max-w-3xl text-center md:text-left mb-8 md:mb-0 md:mr-8">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          Le futur est présent
+        </h1>
+        <p className="text-lg md:text-xl lg:text-2xl mb-6">
+          Découvrez les produits les plus avancés de notre ère.
+        </p>
+        <NavLink to={"/articles"} className="bg-white text-black py-2 px-4 rounded-full font-bold text-lg hover:bg-gray-200 transition-colors duration-300">
+          Voir les produits
+        </NavLink>
+      </div>
+      <div className="flex justify-center">
+        <img src={bannerImg} alt="iPhone 12" className="max-w-full" />
+      </div>
+    </section>
+         <Products />
+      </>
+      
     )
 }

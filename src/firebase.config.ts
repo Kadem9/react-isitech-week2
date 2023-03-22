@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, collection } from "firebase/firestore";
 
 // J'ai importé les variables d'environnement dans le fichier .env.local pour qu'elle ne soit pas visible sur github
 const firebaseConfig = {
@@ -12,8 +12,8 @@ const firebaseConfig = {
   appId: "1:117512280945:web:9142da1b722d398fa5f4d0"
 };
   
-  export const app = initializeApp(firebaseConfig);
- 
-  const db = getFirestore();
+export const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+export const db = getFirestore(app);
 
-  export { db };
+export const cartCollection = collection(db, "carts");
