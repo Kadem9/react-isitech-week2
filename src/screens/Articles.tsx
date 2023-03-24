@@ -1,6 +1,8 @@
 import products from '../models/Products.json';
 import { CartContext } from '../context/cart';
 import { useContext } from 'react';
+import { BsFillArrowRightCircleFill, BsFillCartFill } from "react-icons/bs";
+import { Link } from 'react-router-dom';
 
 export const Articles = () => {
     const { cartState, cartdispatch } = useContext(CartContext); // Accéder au contexte du panier
@@ -24,7 +26,20 @@ export const Articles = () => {
                             <h2 className="text-xl font-bold mb-2">{product.name}</h2>
                             <p className="text-gray-700 text-base">{product.description}</p>
                             <p className="text-gray-900 font-bold mt-2">{product.price} €</p>
-                            <button className="bg-zinc-800 text-white p-2 rounded-sm hover:bg-black mt-2" onClick={() => handleAddToCart(product)}>Ajouter au panier</button>
+                            <div className="my-btn flex">
+
+
+
+
+                                <button className="bg-zinc-800 text-white p-2 rounded-sm hover:bg-black mt-2 flex items-center" onClick={() => handleAddToCart(product)}><BsFillCartFill className='mr-2' /> Ajouter au panier</button>
+                                <Link to={`/product/${product.id}`}>
+                                    <button className="bg-cyan-800 text-white p-2 rounded-sm hover:bg-cyan-700 mt-2 flex items-center ml-2">
+                                        <BsFillArrowRightCircleFill className='mr-2' />
+                                        Voir le produit
+                                    </button>
+                                </Link>
+                            </div>
+
                         </div>
                     </div>
                 ))}

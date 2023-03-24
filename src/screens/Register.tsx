@@ -3,6 +3,7 @@ import { useState } from "react";
 import { app } from "../firebase.config";
 
 export const Register = () => {
+    // TODO : REFAIRE LE DESIGN MEME STYLE QUE LOGIN
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirm, setPasswordConfirm] = useState("");

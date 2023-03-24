@@ -9,6 +9,7 @@ import { BsCartCheckFill, BsApple } from 'react-icons/bs'
 import { CartContext } from './context/cart'
 import { useContext } from 'react'
 import { Panier } from './screens/Panier'
+import { ProductView } from './screens/ProductView'
 
 
 
@@ -43,6 +44,7 @@ function App() {
       <Route path="/inscription" element={<Register />} />
       <Route path="/panier" element={<Panier />} />
       <Route path="/articles" element={<Articles />} />
+      <Route path="/product/:id" element={<ProductView />} />
     </Routes>
   </div>
   
